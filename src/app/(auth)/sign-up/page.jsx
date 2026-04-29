@@ -42,6 +42,12 @@ export default function SignUpPage() {
         setLoading(false)
     };
 
+    const handleGoogleLogin = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    }
+
     return (
         <div className="min-h-screen flex items-center justify-center px-4 ">
 
@@ -63,7 +69,7 @@ export default function SignUpPage() {
                         Join us and start shopping today
                     </p>
 
-                    <button className="w-full flex items-center justify-center gap-2 border rounded-full py-2 mb-4 hover:bg-gray-50 transition">
+                    <button onClick={handleGoogleLogin} className="w-full flex items-center justify-center gap-2 border rounded-full py-2 mb-4 hover:bg-gray-50 transition">
                         <img
                             src="https://www.svgrepo.com/show/475656/google-color.svg"
                             className="w-5 h-5"
@@ -124,7 +130,7 @@ export default function SignUpPage() {
                             />
                         </div>
 
-                        <button 
+                        <button
                             type="submit"
                             className="w-full flex items-center justify-center bg-[#7b5a45] text-white py-2 rounded-full mt-2 hover:opacity-90 transition"
                         >

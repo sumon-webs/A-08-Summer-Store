@@ -44,6 +44,12 @@ export default function LoginPage() {
             router.refresh()
         }
     };
+
+    const handleGoogleLogin = async ()=>{
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    }
     return (
         <div className="min-h-screen flex items-center justify-center  px-4">
 
@@ -62,7 +68,7 @@ export default function LoginPage() {
                         Choose from 10,000+ products across 400+ categories
                     </p>
 
-                    <button className="w-full flex items-center justify-center gap-2 border rounded-full py-2 mb-4 hover:bg-gray-50 transition">
+                    <button onClick={handleGoogleLogin} className="w-full flex items-center justify-center gap-2 border rounded-full py-2 mb-4 hover:bg-gray-50 transition">
                         <img
                             src="https://www.svgrepo.com/show/475656/google-color.svg"
                             className="w-5 h-5"

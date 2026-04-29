@@ -14,7 +14,7 @@ const NavBar = () => {
 
     const handleLogOut = async () => {
         await authClient.signOut();
-        window.location.reload( )
+        window.location.reload()
     }
     return (
         <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-white/70 dark:bg-black/40 backdrop-blur-xl shadow-sm">
@@ -45,7 +45,9 @@ const NavBar = () => {
                             {data?.user
                                 ? <div className=" flex justify-center items-center gap-3">
                                     <Avatar>
-                                        <Avatar.Image alt="John Doe" src={data?.user?.image} />
+                                        <Avatar.Image
+                                            referrerPolicy="no-referrer"
+                                            alt="John Doe" src={data?.user?.image} />
                                         <Avatar.Fallback>{data?.user?.name[0]}</Avatar.Fallback>
                                     </Avatar>
                                     <Button
