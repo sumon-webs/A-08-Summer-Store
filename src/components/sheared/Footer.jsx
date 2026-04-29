@@ -6,7 +6,6 @@ const Footer = () => {
         <footer className="bg-gray-900 text-gray-300 mt-16">
             <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                {/* Brand */}
                 <div>
                     <h2 className="text-2xl font-bold text-white">Summer Store</h2>
                     <p className="mt-3 text-sm text-gray-400">
@@ -14,7 +13,6 @@ const Footer = () => {
                     </p>
                 </div>
 
-                {/* Contact Info */}
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-3">Contact</h3>
                     <p className="text-sm">Email: sumon01333581557@gmail.com</p>
@@ -22,7 +20,6 @@ const Footer = () => {
                     <p className="text-sm">Location: Dhaka, Bangladesh</p>
                 </div>
 
-                {/* Links */}
                 <div>
                     <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
