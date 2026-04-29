@@ -1,6 +1,5 @@
 
-
-const layout = ({children}) => {
+const layout = ({ children }) => {
     return (
         <div>
             {children}
