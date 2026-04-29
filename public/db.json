@@ -7,7 +7,7 @@
         "rating": 4.7,
         "stock": 10,
         "description": "Stylish UV protection sunglasses perfect for summer outings.",
-        "image": "https://i.postimg.cc/1Xexample1.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482040/pexels-justyzvidz-11882776_oizopr.jpg",
         "category": "Accessories"
     },
     {
@@ -18,7 +18,7 @@
         "rating": 4.5,
         "stock": 25,
         "description": "Lightweight breathable cotton t-shirt for hot summer days.",
-        "image": "https://i.postimg.cc/2Xexample2.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482039/pexels-dayong-tien-681073045-34156906_v511eu.jpg",
         "category": "Clothing"
     },
     {
@@ -29,7 +29,7 @@
         "rating": 4.6,
         "stock": 15,
         "description": "Rechargeable mini fan for instant cooling anywhere.",
-        "image": "https://i.postimg.cc/3Xexample3.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482062/pexels-fox-58267-5850342_ckbblx.jpg",
         "category": "Electronics"
     },
     {
@@ -40,7 +40,7 @@
         "rating": 4.8,
         "stock": 30,
         "description": "Soothing aloe vera gel for sunburn and skin hydration.",
-        "image": "https://i.postimg.cc/4Xexample4.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482034/pexels-hype-international-395825114-14798567_ynk25i.jpg",
         "category": "Skincare"
     },
     {
@@ -51,7 +51,7 @@
         "rating": 4.4,
         "stock": 18,
         "description": "Comfortable lightweight sandals for daily summer use.",
-        "image": "https://i.postimg.cc/5Xexample5.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482030/pexels-jose-martin-segura-benites-1422456152-26925267_q8jd20.jpg",
         "category": "Footwear"
     },
     {
@@ -62,7 +62,7 @@
         "rating": 4.9,
         "stock": 22,
         "description": "Keeps water cold for hours, perfect for summer hydration.",
-        "image": "https://i.postimg.cc/6Xexample6.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482362/pexels-noval-33206680_lpsxv3.jpg",
         "category": "Accessories"
     },
     {
@@ -73,7 +73,7 @@
         "rating": 4.3,
         "stock": 12,
         "description": "Stylish straw hat for sun protection at beaches.",
-        "image": "https://i.postimg.cc/7Xexample7.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482350/pexels-darya-grey_owl-132130036-19245733_n6o06m.jpg",
         "category": "Accessories"
     },
     {
@@ -84,7 +84,7 @@
         "rating": 4.6,
         "stock": 8,
         "description": "Compact air cooler for personal room cooling.",
-        "image": "https://i.postimg.cc/8Xexample8.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482342/download_1_aoqfxg.jpg",
         "category": "Home Appliances"
     },
     {
@@ -95,7 +95,7 @@
         "rating": 4.4,
         "stock": 20,
         "description": "Comfortable cotton shorts for hot weather.",
-        "image": "https://i.postimg.cc/9Xexample9.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482342/download_2_j06jy5.jpg",
         "category": "Clothing"
     },
     {
@@ -106,7 +106,7 @@
         "rating": 4.5,
         "stock": 35,
         "description": "Instant cooling towel for outdoor summer activities.",
-        "image": "https://i.postimg.cc/10Xexample10.png",
+        "image": "https://res.cloudinary.com/dyrgvsedy/image/upload/v1777482062/pexels-fox-58267-5850342_ckbblx.jpg",
         "category": "Accessories"
     }
 ]
