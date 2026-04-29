@@ -1,11 +1,15 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
+import { error } from "better-auth/api";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function SignUpPage() {
+    const router = useRouter()
 
-    const handleSignUp = (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault();
 
         const form = e.target;
@@ -17,7 +21,15 @@ export default function SignUpPage() {
             password: form.password.value,
         };
 
-        console.log(userData);
+        const { data, error } = await authClient.signUp.email({
+            email: userData.email, // user email address
+            password: userData.password, // user password -> min 8 characters by default
+            name: userData.name, // user display name
+            image: userData.image, // User image URL (optional)
+        })
+        if (!error) {
+            router.push("/log-in")
+        }
     };
 
     return (
@@ -26,7 +38,9 @@ export default function SignUpPage() {
             <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden flex">
 
                 <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
-
+                    {error && (
+                        <p className="text-red-500 text-sm mt-2">{error.message}</p>
+                    )}
                     <h2 className="text-sm tracking-widest text-gray-500 mb-6">
                         Summer Store
                     </h2>

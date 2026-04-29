@@ -1,13 +1,34 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
+import { error } from "better-auth/api";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
 
-    const handleLogin = (e) => {
-        e.preventDefault();
+    const router = useRouter()
 
+    const handleLogin = async (e) => {
+        e.preventDefault()
+
+        const form = e.target;
+
+        const userData = {
+            email: form.email.value,
+            password: form.password.value,
+
+        };
+        const { data, error } = await authClient.signIn.email({
+            email: userData.email,
+            password: userData.password,
+            rememberMe: true
+        })
+
+        if (!error) {
+            router.push("/")
+        }
     }
     return (
         <div className="min-h-screen flex items-center justify-center  px-4">
@@ -41,6 +62,7 @@ export default function LoginPage() {
                         <div>
                             <label className="text-sm text-gray-600">Email</label>
                             <input
+                                name="email"
                                 type="email"
                                 placeholder="johncanny@gmail.com"
                                 className="w-full mt-1 px-4 py-2 rounded-full bg-gray-100 focus:outline-none"
@@ -50,6 +72,7 @@ export default function LoginPage() {
                         <div>
                             <label className="text-sm text-gray-600">Password</label>
                             <input
+                                name="password"
                                 type="password"
                                 placeholder="********"
                                 className="w-full mt-1 px-4 py-2 rounded-full bg-gray-100 focus:outline-none"
