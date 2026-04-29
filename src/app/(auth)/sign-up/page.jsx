@@ -9,11 +9,11 @@ import { FaSpinner } from "react-icons/fa";
 
 export default function SignUpPage() {
 
-    const { error, setError } = useState("")
+    const [error, setError] = useState("")
 
     const router = useRouter()
 
-    const { loading, setLoading } = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -37,9 +37,9 @@ export default function SignUpPage() {
             setError(error.message)
         }
         if (data) {
-            setLoading(false)
             router.push("/log-in")
         }
+        setLoading(false)
     };
 
     return (
@@ -49,7 +49,7 @@ export default function SignUpPage() {
 
                 <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
                     {error && (
-                        <p className="text-red-500 text-sm mt-2">{error.message}</p>
+                        <p className="text-red-500 text-sm mt-2">{error}</p>
                     )}
                     <h2 className="text-sm tracking-widest text-gray-500 mb-6">
                         Summer Store
@@ -124,9 +124,9 @@ export default function SignUpPage() {
                             />
                         </div>
 
-                        <button
+                        <button 
                             type="submit"
-                            className="w-full bg-[#7b5a45] text-white py-2 rounded-full mt-2 hover:opacity-90 transition"
+                            className="w-full flex items-center justify-center bg-[#7b5a45] text-white py-2 rounded-full mt-2 hover:opacity-90 transition"
                         >
                             {loading ? <FaSpinner className=" animate-spin" /> : "Sign Up"}
                         </button>

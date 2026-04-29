@@ -9,39 +9,50 @@ import { FaSpinner } from "react-icons/fa6";
 
 export default function LoginPage() {
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("")
 
     const router = useRouter()
 
     const handleLogin = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+
         setLoading(true);
-        const form = e.target;
+        setError("");
+
+        const form = e.currentTarget;
 
         const userData = {
             email: form.email.value,
             password: form.password.value,
-
         };
+
         const { data, error } = await authClient.signIn.email({
             email: userData.email,
             password: userData.password,
-            rememberMe: true
-        })
+            rememberMe: true,
+        });
 
-        if (!error) {
-            router.push("/")
+        setLoading(false);
+
+        if (error) {
+            setError(error.message);
+            return;
         }
+
         if (data) {
-            setLoading(false)
+            router.push("/")
+            router.refresh()
         }
-    }
+    };
     return (
         <div className="min-h-screen flex items-center justify-center  px-4">
 
             <div className="w-full max-w-5xl  rounded-3xl shadow-2xl overflow-hidden flex">
 
                 <div className="w-full md:w-1/2 p-10 flex flex-col justify-center">
-
+                    {error && (
+                        <p className="text-red-500 text-sm mt-2">{error}</p>
+                    )}
                     <h2 className="text-sm tracking-widest text-gray-500 mb-6">
                         Summer Store
                     </h2>

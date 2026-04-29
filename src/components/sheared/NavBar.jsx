@@ -3,12 +3,19 @@
 import { Avatar, Button } from "@heroui/react";
 import NavLink from "../NavLink";
 import Link from "next/link";
-import { useSession } from "@/lib/auth-client";
+import { authClient, useSession } from "@/lib/auth-client";
 import { FaSpinner } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const NavBar = () => {
+    const router = useRouter()
 
     const { data, isPending } = useSession()
+
+    const handleLogOut = async () => {
+        await authClient.signOut();
+        window.location.reload( )
+    }
     return (
         <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-white/70 dark:bg-black/40 backdrop-blur-xl shadow-sm">
             <header className="container mx-auto flex h-16 items-center justify-between px-6">
@@ -42,6 +49,7 @@ const NavBar = () => {
                                         <Avatar.Fallback>{data?.user?.name[0]}</Avatar.Fallback>
                                     </Avatar>
                                     <Button
+                                        onClick={handleLogOut}
                                         radius="full"
                                         className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-5 py-2 shadow-md hover:scale-105 transition-all duration-300"
                                     >
