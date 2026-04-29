@@ -1,18 +1,20 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { error } from "better-auth/api";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { FaSpinner } from "react-icons/fa6";
 
 export default function LoginPage() {
+    const [loading, setLoading] = useState(false);
 
     const router = useRouter()
 
     const handleLogin = async (e) => {
         e.preventDefault()
-
+        setLoading(true);
         const form = e.target;
 
         const userData = {
@@ -28,6 +30,9 @@ export default function LoginPage() {
 
         if (!error) {
             router.push("/")
+        }
+        if (data) {
+            setLoading(false)
         }
     }
     return (
@@ -79,8 +84,10 @@ export default function LoginPage() {
                             />
                         </div>
 
-                        <button type="submit" className="w-full bg-[#7b5a45] text-white py-2 rounded-full mt-2 hover:opacity-90 transition cursor-pointer">
-                            Login
+                        <button
+                            disabled={loading}
+                            type="submit" className="w-full flex justify-center items-center bg-[#7b5a45] text-white py-2 rounded-full mt-2 hover:opacity-90 transition cursor-pointer">
+                            {loading ? <FaSpinner className="animate-spin " /> : "Log in"}
                         </button>
                     </form>
                     <p className="text-center text-sm text-gray-500 mt-4">

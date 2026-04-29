@@ -1,10 +1,14 @@
 "use client";
 
-import { Button } from "@heroui/react";
+import { Avatar, Button } from "@heroui/react";
 import NavLink from "../NavLink";
 import Link from "next/link";
+import { useSession } from "@/lib/auth-client";
+import { FaSpinner } from "react-icons/fa";
 
 const NavBar = () => {
+
+    const { data, isPending } = useSession()
     return (
         <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-white/70 dark:bg-black/40 backdrop-blur-xl shadow-sm">
             <header className="container mx-auto flex h-16 items-center justify-between px-6">
@@ -28,18 +32,35 @@ const NavBar = () => {
                     </li>
                 </ul>
 
-                <div className="flex items-center gap-3">
+                {
+                    isPending ? <FaSpinner className="animate-spin" />
+                        : <div className="flex items-center gap-3">
+                            {data?.user
+                                ? <div className=" flex justify-center items-center gap-3">
+                                    <Avatar>
+                                        <Avatar.Image alt="John Doe" src={data?.user?.image} />
+                                        <Avatar.Fallback>{data?.user?.name[0]}</Avatar.Fallback>
+                                    </Avatar>
+                                    <Button
+                                        radius="full"
+                                        className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-5 py-2 shadow-md hover:scale-105 transition-all duration-300"
+                                    >
+                                        Log Out
+                                    </Button>
+                                </div>
+                                : <Link href={"/log-in"}>
+                                    <Button
+                                        radius="full"
+                                        className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-5 py-2 shadow-md hover:scale-105 transition-all duration-300"
+                                    >
+                                        Log in
+                                    </Button>
+                                </Link>
+                            }
 
-                    <Link href={"/log-in"}>
-                        <Button
-                            radius="full"
-                            className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-5 py-2 shadow-md hover:scale-105 transition-all duration-300"
-                        >
-                            Log in
-                        </Button>
-                    </Link>
 
-                </div>
+                        </div>
+                }
             </header>
         </nav>
     );

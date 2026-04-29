@@ -1,17 +1,23 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { error } from "better-auth/api";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 export default function SignUpPage() {
+
+    const { error, setError } = useState("")
+
     const router = useRouter()
+
+    const { loading, setLoading } = useState(false)
 
     const handleSignUp = async (e) => {
         e.preventDefault();
-
+        setLoading(true)
         const form = e.target;
 
         const userData = {
@@ -27,7 +33,11 @@ export default function SignUpPage() {
             name: userData.name, // user display name
             image: userData.image, // User image URL (optional)
         })
-        if (!error) {
+        if (error) {
+            setError(error.message)
+        }
+        if (data) {
+            setLoading(false)
             router.push("/log-in")
         }
     };
@@ -118,7 +128,7 @@ export default function SignUpPage() {
                             type="submit"
                             className="w-full bg-[#7b5a45] text-white py-2 rounded-full mt-2 hover:opacity-90 transition"
                         >
-                            Create Account
+                            {loading ? <FaSpinner className=" animate-spin" /> : "Sign Up"}
                         </button>
                     </form>
 
