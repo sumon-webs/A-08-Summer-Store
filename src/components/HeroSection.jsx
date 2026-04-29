@@ -16,11 +16,9 @@ const HeroSection = () => {
                 autoplay={{ delay: 3000 }}
             >
 
-                {/* Slide 1 */}
                 <SwiperSlide>
                     <div className="h-[500px] w-full relative flex items-center justify-center rounded-2xl overflow-hidden">
 
-                        {/* Background Image (Blur Layer) */}
                         <div
                             className="absolute inset-0 scale-110"
                             style={{
@@ -31,10 +29,8 @@ const HeroSection = () => {
                             }}
                         ></div>
 
-                        {/* Dark overlay */}
                         <div className="absolute inset-0 bg-black/40"></div>
 
-                        {/* Content */}
                         <div className="relative flex flex-col items-center text-center text-white px-6">
 
                             <h1 className="text-3xl md:text-6xl font-bold animate__animated animate__fadeInDown">
@@ -60,7 +56,6 @@ const HeroSection = () => {
                     </div>
                 </SwiperSlide>
 
-                {/* Slide 2 */}
                 <SwiperSlide>
                     <div className="h-[500px] w-full relative flex items-center justify-center rounded-2xl overflow-hidden">
 

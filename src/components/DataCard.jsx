@@ -1,10 +1,9 @@
-import React from "react";
 
 const DataCard = ({ data }) => {
     console.log(data);
 
     return (
-        <div className="border rounded-xl p-4 shadow-md w-96">
+        <div className="border rounded-xl p-4 shadow-md ">
             <img
                 src={data.image}
                 alt={data.name}
