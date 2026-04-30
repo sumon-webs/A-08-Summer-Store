@@ -3,7 +3,6 @@ export default function Loading() {
         <div className="animate-pulse">
 
 
-            {/* Hero */}
             <div className="container mx-auto mt-6 px-4">
                 <div className="h-[300px] bg-gray-300 rounded-xl"></div>
             </div>

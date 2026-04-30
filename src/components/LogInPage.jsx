@@ -35,6 +35,7 @@ export default function LoginPage() {
 
         if (error) {
             setError(error.message);
+            setLoading(false)
             return;
         }
 
@@ -42,6 +43,7 @@ export default function LoginPage() {
             router.push("/")
             router.refresh()
         }
+        
     };
 
     const handleGoogleLogin = async () => {
@@ -75,7 +77,6 @@ export default function LoginPage() {
                         Sign in with Google
                     </button>
 
-                    {/* OR */}
                     <div className="text-center text-sm text-gray-400 mb-4">OR</div>
 
                     <form className="space-y-4" onSubmit={handleLogin}>
