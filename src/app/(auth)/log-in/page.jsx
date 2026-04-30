@@ -40,7 +40,6 @@ export default function LoginPage() {
             router.push("/")
             router.refresh()
         }
-        setLoading(false);
     };
 
     const handleGoogleLogin = async () => {
