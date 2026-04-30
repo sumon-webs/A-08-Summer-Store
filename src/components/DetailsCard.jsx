@@ -9,9 +9,6 @@ const DetailsCard = ({ product }) => {
 
             <div className="mb-6">
                 <Link href="/products">
-                    <Button className="flex items-center gap-2">
-                        <FaArrowLeft /> Go back
-                    </Button>
                 </Link>
             </div>
 
