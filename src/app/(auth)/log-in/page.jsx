@@ -17,7 +17,6 @@ export default function LoginPage() {
         e.preventDefault();
 
         setLoading(true);
-        setError("");
 
         const form = e.currentTarget;
 
@@ -32,8 +31,6 @@ export default function LoginPage() {
             rememberMe: true,
         });
 
-        setLoading(false);
-
         if (error) {
             setError(error.message);
             return;
@@ -43,9 +40,10 @@ export default function LoginPage() {
             router.push("/")
             router.refresh()
         }
+        setLoading(false);
     };
 
-    const handleGoogleLogin = async ()=>{
+    const handleGoogleLogin = async () => {
         const data = await authClient.signIn.social({
             provider: "google",
         });
@@ -85,9 +83,10 @@ export default function LoginPage() {
                             <label className="text-sm text-gray-600">Email</label>
                             <input
                                 name="email"
-                                type="email"
-                                placeholder="johncanny@gmail.com"
+                                type="text"
+                                placeholder="Enter your email"
                                 className="w-full mt-1 px-4 py-2 rounded-full bg-gray-100 focus:outline-none"
+                                required
                             />
                         </div>
 
@@ -96,8 +95,9 @@ export default function LoginPage() {
                             <input
                                 name="password"
                                 type="password"
-                                placeholder="********"
+                                placeholder="enter pasword"
                                 className="w-full mt-1 px-4 py-2 rounded-full bg-gray-100 focus:outline-none"
+                                required
                             />
                         </div>
 

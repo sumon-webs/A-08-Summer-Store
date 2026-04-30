@@ -28,10 +28,10 @@ export default function SignUpPage() {
         };
 
         const { data, error } = await authClient.signUp.email({
-            email: userData.email, // user email address
-            password: userData.password, // user password -> min 8 characters by default
-            name: userData.name, // user display name
-            image: userData.image, // User image URL (optional)
+            email: userData.email,
+            password: userData.password, 
+            name: userData.name,
+            image: userData.image,
         })
         if (error) {
             setError(error.message)
