@@ -9,7 +9,7 @@ const ProfilePage = () => {
     const { data, pending } = useSession();
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+        <div className="flex items-center justify-center bg-gray-100 p-6">
 
             {pending
                 ?
