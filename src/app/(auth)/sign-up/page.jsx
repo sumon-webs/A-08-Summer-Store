@@ -69,7 +69,7 @@ export default function SignUpPage() {
                         Join us and start shopping today
                     </p>
 
-                    <button onClick={handleGoogleLogin} className="w-full flex items-center justify-center gap-2 border rounded-full py-2 mb-4 hover:bg-gray-50 transition">
+                    <button onClick={handleGoogleLogin} className=" cursor-pointer w-full flex items-center justify-center gap-2 border rounded-full py-2 mb-4 hover:bg-gray-50 transition">
                         <img
                             src="https://www.svgrepo.com/show/475656/google-color.svg"
                             className="w-5 h-5"
