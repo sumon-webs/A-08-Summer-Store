@@ -1,6 +1,11 @@
 import DataCard from "@/components/DataCard";
 import { getSummerData } from "@/lib/DataFetch";
 
+export const metadata = {
+    title: "Summer store | Products",
+    description: "You can by your summer products",
+};
+
 const ProductsPage = async () => {
     const datas = await getSummerData();
     return (

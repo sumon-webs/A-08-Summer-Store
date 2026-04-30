@@ -1,5 +1,9 @@
 import React from 'react';
 
+export const metadata = {
+    title: "Summer store | Products",
+    description: "You can by your summer products",
+};
 const PrductsLoading = () => {
     return (
         <div className="animate-pulse">

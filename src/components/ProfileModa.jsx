@@ -5,8 +5,9 @@ import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import { useState } from "react";
 import { FaUser } from "react-icons/fa6";
 
-export function ProfileModal() {
 
+
+export function ProfileModal() {
     const [pending, setPending] = useState(false)
 
     const handleUpdateProfile = async (e) => {
@@ -28,7 +29,7 @@ export function ProfileModal() {
         <Modal>
             <Button variant="outline">Edit Profile</Button>
 
-            <Modal.Backdrop>
+            <Modal.Backdrop >
                 <Modal.Container placement="auto">
                     <Modal.Dialog className="sm:max-w-md">
                         <Modal.CloseTrigger />
@@ -43,7 +44,6 @@ export function ProfileModal() {
 
                                 <form onSubmit={handleUpdateProfile} className="flex flex-col gap-4">
 
-                                    {/* Name */}
                                     <TextField className="w-full">
                                         <Label>Name</Label>
                                         <Input
@@ -52,7 +52,6 @@ export function ProfileModal() {
                                         />
                                     </TextField>
 
-                                    {/* Image */}
                                     <TextField className="w-full">
                                         <Label>Image URL</Label>
                                         <Input
@@ -61,7 +60,7 @@ export function ProfileModal() {
                                         />
                                     </TextField>
 
-                                    <Button type="submit">
+                                    <Button  type="submit">
                                         {pending ? "Submiting" : "Submit"}
                                     </Button>
 
