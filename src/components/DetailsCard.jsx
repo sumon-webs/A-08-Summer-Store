@@ -1,9 +1,13 @@
+"use client"
+
 import { Button } from "@heroui/react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaArrowLeft } from "react-icons/fa";
 
 const DetailsCard = ({ product }) => {
+    const router = useRouter()
+
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
 
@@ -64,14 +68,10 @@ const DetailsCard = ({ product }) => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 pt-4">
-
-                        <Link href="/products">
-                            <Button className="w-full sm:w-auto">
-                                <FaArrowLeft />
-                                Go Back
-                            </Button>
-                        </Link>
-
+                        <Button onClick={() => router.back()} className="w-full sm:w-auto">
+                            <FaArrowLeft />
+                            Go Back
+                        </Button>
                     </div>
 
                 </div>
