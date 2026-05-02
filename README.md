@@ -29,3 +29,4 @@ Users can browse summer products, view product details, and enjoy a clean shoppi
 - **Better Auth**
 - **MongoDB**
 - **React Icons**
+- **Lottie**
